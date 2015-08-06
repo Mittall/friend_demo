@@ -1,0 +1,43 @@
+<h1>Listing users</h1>
+
+<!--<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <!--<th>Email</th>
+      <th>Password</th>->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <!--<tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><strong><%= link_to user.name, user %></strong></td>
+        <td></td>
+        <td>(<%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>)</td>
+        <div class="clear"></div>
+        <!--<td><%= user.email %></td>
+        <td><%= user.password %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td> ->
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>-->
+
+<br>
+
+<strong>User Name</strong>
+<% @users.each do |user| %>
+    <div class ="user">
+      <p>
+        <strong><%= link_to user.name, user %></strong>&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        (<%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>)
+        <div class="clear"></div>
+      </p>
+    </div>
+<% end %>
+<%= link_to 'New User', new_user_path %>
